@@ -1,7 +1,7 @@
 import Weather from "./Components/Weather";
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex items-center justify-center min-h-screen px-6 py-12">
       <Weather/>
     </div>
   );

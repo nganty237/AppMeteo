@@ -20,7 +20,7 @@ body {
   margin: 0;
   font-family: 'Sora', sans-serif;
   color: var(--text-primary);
-  background: #0d0820;
+  background: #061a1a;
 }
 
 .weather-body {
@@ -28,7 +28,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 30% 20%, #2d1b69 0%, #1a1040 40%, #0d0820 100%);
+  background: radial-gradient(ellipse at 30% 20%, #064e3b 0%, #062626 40%, #041414 100%);
   padding: 2rem;
 }
 
@@ -51,7 +51,7 @@ body {
   position: absolute;
   top: -80px; right: -80px;
   width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(120,80,255,0.25) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -99,14 +99,14 @@ body {
 
 .w-search-btn {
   width: 48px; height: 48px;
-  background: linear-gradient(135deg, #7c5cfc, #5b8df6);
+  background: linear-gradient(135deg, #10b981, #059669);
   border: none;
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
   transition: transform 0.15s, opacity 0.15s;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(124,92,252,0.4);
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
   color: #fff;
 }
 
@@ -236,8 +236,8 @@ body {
   flex-shrink: 0;
 }
 
-.w-stat-icon.blue { background: rgba(100,160,255,0.18); color: #82b4ff; }
-.w-stat-icon.teal { background: rgba(80,220,180,0.18); color: #5ee8c0; }
+.w-stat-icon.blue { background: rgba(34, 211, 238, 0.15); color: #22d3ee; }
+.w-stat-icon.teal { background: rgba(16, 185, 129, 0.15); color: #34d399; }
 
 .w-stat-val {
   font-family: 'Space Mono', monospace;

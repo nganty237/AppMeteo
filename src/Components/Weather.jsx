@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect, useCallback } from 'react';
-import { Search, Droplets, Wind, Sun, Cloud, CloudRain, CloudDrizzle, CloudLightning, Snowflake, CloudFog } from 'lucide-react';
+import { Search, Droplets, Wind, Sun, Moon, Cloud, CloudSun, CloudMoon, CloudRain, CloudDrizzle, CloudLightning, Snowflake, CloudFog } from 'lucide-react';
 
 function Weather() {
   const [weatherData, setWeatherData] = useState(null);
@@ -36,15 +36,23 @@ function Weather() {
     }
   }, []);
 
-  const renderWeatherIcon = (iconCode) => {
+  const renderWeatherIcon = (iconCode, temp) => {
     const iconProps = { size: 100, strokeWidth: 1.5, className: "w-main-icon" };
     
+    // Si la température est extrême (>= 35), on force l'icône du Soleil pour refléter la chaleur intense
+    if (temp >= 35) {
+      return <Sun {...iconProps} className="w-main-icon sun-color" />;
+    }
+
     switch (iconCode) {
       case '01d':
-      case '01n':
         return <Sun {...iconProps} className="w-main-icon sun-color" />;
+      case '01n':
+        return <Moon {...iconProps} className="w-main-icon moon-color" />;
       case '02d':
+        return <CloudSun {...iconProps} className="w-main-icon cloud-color" />;
       case '02n':
+        return <CloudMoon {...iconProps} className="w-main-icon cloud-color" />;
       case '03d':
       case '03n':
       case '04d':
@@ -147,7 +155,7 @@ function Weather() {
         {weatherData ? (
           <div className="w-fade-in">
             <div className="w-icon-wrap">
-              {renderWeatherIcon(weatherData.icon)}
+              {renderWeatherIcon(weatherData.icon, weatherData.temperature)}
             </div>
 
             <div className="w-temp-block">

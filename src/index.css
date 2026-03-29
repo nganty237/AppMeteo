@@ -156,33 +156,38 @@ body {
 }
 
 .sun-color {
-  color: #ffb400;
-  filter: drop-shadow(0 0 25px rgba(255, 180, 0, 0.6));
+  color: #ffcc00;
+  filter: drop-shadow(0 0 35px rgba(255, 180, 0, 0.7));
+}
+
+.moon-color {
+  color: #c7d2fe;
+  filter: drop-shadow(0 0 30px rgba(99, 102, 241, 0.5));
 }
 
 .cloud-color {
-  color: #e2e8f0;
-  filter: drop-shadow(0 0 20px rgba(226, 232, 240, 0.3));
+  color: #cbd5e1;
+  filter: drop-shadow(0 0 20px rgba(203, 213, 225, 0.3));
 }
 
 .rain-color {
-  color: #60a5fa;
-  filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.4));
+  color: #3b82f6;
+  filter: drop-shadow(0 0 25px rgba(59, 130, 246, 0.5));
 }
 
 .lightning-color {
-  color: #fbbf24;
-  filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.5));
+  color: #facc15;
+  filter: drop-shadow(0 0 30px rgba(250, 204, 21, 0.7));
 }
 
 .snow-color {
-  color: #ffffff;
-  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+  color: #f8fafc;
+  filter: drop-shadow(0 0 25px rgba(248, 250, 252, 0.6));
 }
 
 .fog-color {
   color: #94a3b8;
-  filter: drop-shadow(0 0 15px rgba(148, 163, 184, 0.3));
+  filter: drop-shadow(0 0 15px rgba(148, 163, 184, 0.4));
 }
 
 @keyframes floatIcon {

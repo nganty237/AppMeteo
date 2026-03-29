@@ -12,7 +12,7 @@ body {
   margin: 0;
   font-family: 'Sora', sans-serif;
   color: #ffffff;
-  background: #061a1a;
+  background: #0b1120;
 }
 
 .weather-body {
@@ -20,8 +20,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(ellipse at 30% 20%, #064e3b 0%, #062626 40%, #041414 100%);
+  background: #020617;
   padding: 2rem;
+  transition: background 0.5s ease;
+}
+
+.weather-body.sunny {
+  background: radial-gradient(ellipse at 30% 20%, #451a03 0%, #171717 100%);
+}
+
+.weather-body.cloudy {
+  background: radial-gradient(ellipse at 30% 20%, #1e293b 0%, #0f172a 40%, #020617 100%);
+}
+
+.weather-body.rainy {
+  background: radial-gradient(ellipse at 30% 20%, #1e1b4b 0%, #0c0a09 100%);
+}
+
+.weather-body.snowy {
+  background: radial-gradient(ellipse at 30% 20%, #0c4a6e 0%, #020617 100%);
+}
+
+.weather-body.default {
+  background: radial-gradient(ellipse at 30% 20%, #1e293b 0%, #0f172a 40%, #020617 100%);
 }
 
 .w-card {
@@ -43,7 +64,7 @@ body {
   position: absolute;
   top: -80px; right: -80px;
   width: 220px; height: 220px;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   pointer-events: none;
 }
@@ -65,11 +86,11 @@ body {
   letter-spacing: 0.3em;
   text-align: center;
   margin-bottom: 24px;
-  background: linear-gradient(to right, #10b981, #3b82f6);
+  background: linear-gradient(to right, #60a5fa, #3b82f6);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+  filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.2));
   opacity: 0.9;
   position: relative;
   z-index: 1;
@@ -107,14 +128,14 @@ body {
 
 .w-search-btn {
   width: 48px; height: 48px;
-  background: linear-gradient(135deg, #10b981, #059669);
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
   border: none;
   border-radius: 14px;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer;
   transition: transform 0.15s, opacity 0.15s;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.3);
   color: #fff;
 }
 
@@ -129,31 +150,44 @@ body {
   z-index: 1;
 }
 
-.w-sun {
-  width: 100px; height: 100px;
-  position: relative;
-  animation: floatSun 4s ease-in-out infinite;
+.w-main-icon {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.1));
+  animation: floatIcon 4s ease-in-out infinite;
 }
 
-.w-sun-core {
-  width: 60px; height: 60px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 35% 30%, #FFE066, #FFA500);
-  position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 30px rgba(255,180,0,0.5), 0 0 60px rgba(255,140,0,0.3);
-  animation: pulseSun 3s ease-in-out infinite;
+.sun-color {
+  color: #ffb400;
+  filter: drop-shadow(0 0 25px rgba(255, 180, 0, 0.6));
 }
 
-@keyframes floatSun {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.cloud-color {
+  color: #e2e8f0;
+  filter: drop-shadow(0 0 20px rgba(226, 232, 240, 0.3));
 }
 
-@keyframes pulseSun {
-  0%, 100% { box-shadow: 0 0 30px rgba(255,180,0,0.5), 0 0 60px rgba(255,140,0,0.3); }
-  50% { box-shadow: 0 0 40px rgba(255,180,0,0.7), 0 0 80px rgba(255,140,0,0.4); }
+.rain-color {
+  color: #60a5fa;
+  filter: drop-shadow(0 0 20px rgba(96, 165, 250, 0.4));
+}
+
+.lightning-color {
+  color: #fbbf24;
+  filter: drop-shadow(0 0 25px rgba(251, 191, 36, 0.5));
+}
+
+.snow-color {
+  color: #ffffff;
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
+}
+
+.fog-color {
+  color: #94a3b8;
+  filter: drop-shadow(0 0 15px rgba(148, 163, 184, 0.3));
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.05); }
 }
 
 
@@ -238,8 +272,8 @@ body {
   flex-shrink: 0;
 }
 
-.w-stat-icon.blue { background: rgba(34, 211, 238, 0.15); color: #22d3ee; }
-.w-stat-icon.teal { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.w-stat-icon.blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
+.w-stat-icon.teal { background: rgba(99, 102, 241, 0.15); color: #818cf8; }
 
 .w-stat-val {
   font-family: 'Space Mono', monospace;

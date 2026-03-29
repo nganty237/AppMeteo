@@ -15,7 +15,7 @@ function Weather() {
       if (response.ok) {
         setWeatherData({
           humidity: data.main.humidity,
-          windSpeed: data.wind.speed,
+          windSpeed: (data.wind.speed * 3.6).toFixed(1),
           temperature: Math.floor(data.main.temp),
           location: data.name,
           description: data.weather[0].description

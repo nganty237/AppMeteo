@@ -87,10 +87,10 @@ function Weather() {
   };
 
   const getTempColor = (temp) => {
-    if (temp >= 30) return '#f97316'; // Orange-Red
-    if (temp >= 20) return '#fbbf24'; // Amber
-    if (temp >= 10) return '#60a5fa'; // Blue
-    return '#93c5fd'; // Light Blue
+    if (temp >= 30) return '#f97316';
+    if (temp >= 20) return '#fbbf24'; 
+    if (temp >= 10) return '#60a5fa'; 
+    return '#93c5fd'; 
   };
 
   useEffect(() => {
@@ -145,7 +145,7 @@ function Weather() {
         </div>
 
         {weatherData ? (
-          <div>
+          <div className="w-fade-in">
             <div className="w-icon-wrap">
               {renderWeatherIcon(weatherData.icon)}
             </div>
@@ -185,7 +185,7 @@ function Weather() {
             </div>
           </div>
         ) : (
-          <div className="w-loading">Chargement...</div>
+          <div className="w-loading">RECUPERATION DES DONNEES...</div>
         )}
       </div>
     </div>

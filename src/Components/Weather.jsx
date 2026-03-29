@@ -4,6 +4,18 @@ import { Search, Droplets, Wind } from 'lucide-react';
 function Weather() {
   const raysRef = useRef(null);
 
+  const rechearch = async () => {
+    try {
+      const url = `https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=
+      ${import.meta.env.VITTE_API_ID}`
+      const response = await fetch(url)
+      const data = await response.json()
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   useEffect(() => {
     if (!raysRef.current) return;
     raysRef.current.innerHTML = '';

@@ -31,6 +31,7 @@ function Weather() {
   return (
     <div className="weather-body">
       <div className="w-card">
+        <h1 className="w-app-title">METEO</h1>
 
         <div className="w-search-row">
           <input

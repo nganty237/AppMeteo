@@ -66,6 +66,23 @@ body {
   pointer-events: none;
 }
 
+.w-app-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-align: center;
+  margin-bottom: 24px;
+  background: linear-gradient(to right, #10b981, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 4px rgba(16, 185, 129, 0.2));
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
 .w-search-row {
   display: flex;
   gap: 10px;
